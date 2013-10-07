@@ -63,7 +63,7 @@ public class PostingEndPoint {
         Object authorRaw = entity.getProperty("author");
         Object bodyRaw = entity.getProperty("body");
 
-        String postingId = postingIdRaw != null ? postingIdRaw.toString() : null;
+        String postingId = postingIdRaw != null ? UUID.fromString(postingIdRaw.toString()).toString() : null;
         String author = authorRaw != null ? authorRaw.toString() : null;
         String body = bodyRaw != null ? bodyRaw.toString() : null;
 
