@@ -63,12 +63,12 @@ public class PostingEndPoint {
         Object authorRaw = entity.getProperty("author");
         Object bodyRaw = entity.getProperty("body");
 
-        String postingId = postingIdRaw != null ? UUID.fromString(postingIdRaw.toString()).toString() : null;
+        UUID postingId = postingIdRaw != null ? UUID.fromString(postingIdRaw.toString()) : null;
         String author = authorRaw != null ? authorRaw.toString() : null;
         String body = bodyRaw != null ? bodyRaw.toString() : null;
 
         logger.info("Dto source, posting_id: {}, author: {}, body: {}", postingId ,author, body);
-        PostingDto dto = new PostingDto(UUID.fromString(postingId), author, body, general.getGuestbook(), general.getHost());
+        PostingDto dto = new PostingDto(postingId, author, body, general.getGuestbook(), general.getHost());
         return dto;
     }
 
