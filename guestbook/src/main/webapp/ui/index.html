@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Guestbook</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
+    <script src="javascript/org.jquery/jquery-js/jquery-min.js"></script>
+    <script src="javascript/allmarkedup/purl/purl.js"></script>
+    <script src="javascript/com.beebole.pure/pure-js/pure-min.js"></script>
+    <script src="javascript/org.boazglean.paqad/guestbook/guestbook.js"></script>
+</head>
+<body>
+<p class="signedin">Hello, <span class="nickname">wshake42</span> (You can <a class="signout">Sign Out</a>.)</p>
+
+<p class="signedout" style="display:none;">Hello! <a class="signin">Sign In</a> to include your name with greetings you post.</p>
+
+<div class="postings">
+
+<div class="empty">Guestbook <span class="guestbookname">http://shakespeare.mit.edu/romeo_juliet/full.html</span> has no messages.</div>
+
+<div class="many">Messages in Guestbook <span class="guestbookname">http://shakespeare.mit.edu/romeo_juliet/full.html</span>
+    <span class="posting">
+        <p class="anonymous-author" style="display:none;">
+            An anonymous person wrote:
+        </p>
+        <p class="author">
+            <span class="authorname">William Shakespeare</span> wrote:
+        </p>
+<blockquote class="body">If you prick us do we not bleed? If you tickle us do we not laugh? If you poison us do
+    we not die? And if you wrong us shall we not revenge?
+</blockquote>
+    </span>
+</div>
+</div>
+<form id="guestbook-form" action="/guestbook" method="post">
+    <div><textarea name="body" rows="3" cols="60">Love all, trust a few, do wrong to none.</textarea></div>
+    <div><input type="submit" value="Post Greeting"/></div>
+    <input type="hidden" name="guestbook" value="default"/>
+    <input type="hidden" name="host" value="00000000-0000-0000-0000-000000000000"/>
+</form>
+</body>
+</html>

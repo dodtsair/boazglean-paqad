@@ -8,10 +8,35 @@
         <servlet-name>GuestBook Servlet</servlet-name>
         <servlet-class>org.boazglean.paqad.guestbook.GuestBookServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>org.boazglean.paqad.guestbook;org.codehaus.jackson.jaxrs</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GuestBook Servlet</servlet-name>
         <url-pattern>/guestbook</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>json-event</filter-name>
+        <filter-class>org.boazglean.kathab.web.JsonEventAppender</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>json-event</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
+
+
     <welcome-file-list>
         <welcome-file>guestbook.jsp</welcome-file>
     </welcome-file-list>

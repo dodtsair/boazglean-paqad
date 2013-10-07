@@ -55,6 +55,7 @@ public class GuestBookServlet extends HttpServlet{
         Entity posting = new Entity("Posting", guestbookKey);
         //Really so what happens when you set an object as a property?
         //Does it have to be a specific family of objects? serializable? conventional?
+        posting.setProperty("posting_id", UUID.randomUUID().toString());
         posting.setProperty("author", author);
         posting.setProperty("body", body);
         posting.setProperty("date", date);
